@@ -1,11 +1,17 @@
-import { PrismaClient } from "@prisma/client";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
-
-const client = new PrismaClient();
+import { nextCookies } from "better-auth/next-js";
+import prisma from "./dbClient/prisma";
+import { serverEnv } from "./env/serverEnv";
 
 export const auth = betterAuth({
-  database: prismaAdapter(client, { provider: "sqlite" }),
-  baseURL: "http://localhost:3000/",
-  emailAndPassword: { enabled: true },
+  database: prismaAdapter(prisma, { provider: "sqlite" }),
+  baseURL: serverEnv.BETTER_AUTH_URL,
+  secret: serverEnv.BETTER_AUTH_SECRET,
+  emailAndPassword: {
+    enabled: true,
+    autoSignIn: false,
+    requireEmailVerification: false,
+  },
+  plugins: [nextCookies()],
 });

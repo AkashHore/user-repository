@@ -1,3 +1,4 @@
+import Header from "@/components/Layout/Header";
 import ThemeProvider from "@/components/Providers/ThemeProvider";
 import { geistMono, geistSans, interHeading } from "@/lib/fonts";
 import { LayoutProps } from "@/lib/types";
@@ -20,6 +21,8 @@ const RootLayout = ({ children }: LayoutProps) => {
           attribute={"class"}
           defaultTheme="dark"
           enableSystem={false}>
+          <Header />
+
           {children}
         </ThemeProvider>
       </body>
