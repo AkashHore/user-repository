@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <section className="grid h-dvh place-items-center">
-      <Card className="">
+      <Card className="w-sm">
         <CardHeader>
           <CardTitle className="text-center text-3xl">Register</CardTitle>
         </CardHeader>
@@ -29,8 +29,8 @@ const page = () => {
           <RegisterForm />
         </CardContent>
 
-        <CardFooter className="gap-1">
-          Don&apos;t have an account?
+        <CardFooter className="items-center justify-center gap-1">
+          Already have an account?
           <Link
             className="text-blue-700"
             href={"/login"}>

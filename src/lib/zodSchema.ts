@@ -17,6 +17,7 @@ export const registerSchema = z
   .object({
     name: z
       .string()
+      .trim()
       .min(2, { error: "Atleast 2 Characters Required" })
       .max(32, { error: "Name should not exceed 32 Characters" }),
     email: z
