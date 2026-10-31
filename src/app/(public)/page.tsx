@@ -1,4 +1,4 @@
-import ToastButton from "@/components/ToastButton";
+import UserCard from "@/components/UserCard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,15 +8,19 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <section className="grid h-dvh place-items-center">
-      <div className="space-y-4 text-center">
-        <h1 className="text-5xl font-semibold">Next.js Starter Fullstack</h1>
-        <h2 className="text-3xl">
-          Production grade Fullstack Next.js starter template
-        </h2>
+    <section className="grid grid-cols-1 place-items-center gap-8 pt-22 pb-8 md:grid-cols-2 lg:grid-cols-3">
+      {/* {allusers.map((item) => (
+        <UserCard
+          key={item.userId}
+          ucData={item}
+        />
+      ))} */}
 
-        <ToastButton />
-      </div>
+      <UserCard />
+      <UserCard />
+      <UserCard />
+      <UserCard />
+      <UserCard />
     </section>
   );
 };
