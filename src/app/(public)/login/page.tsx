@@ -21,7 +21,7 @@ const page = () => {
       <section className="grid h-dvh place-items-center">
         <Card className="w-sm">
           <CardHeader>
-            <CardTitle className="text-center text-3xl">Register</CardTitle>
+            <CardTitle className="text-center text-3xl">Login</CardTitle>
           </CardHeader>
 
           <Separator />
