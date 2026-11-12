@@ -38,3 +38,8 @@ export const registerSchema = z
   });
 
 export type RegisterType = z.infer<typeof registerSchema>;
+
+export type UserCardType = Pick<RegisterType, "name" | "email"> & {
+  id: string;
+  image?: string | null;
+};

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeaderProfile from "../HeaderProfile";
 import ThemeToggleButton from "./ThemeToggleButton";
 
 const Header = () => {
@@ -11,12 +12,15 @@ const Header = () => {
           <h1
             className="text-2xl font-semibold"
             aria-label="App Name">
-            NSF App
+            User-Repository
           </h1>
         </Link>
 
         <nav className="flex items-center gap-4">
           <Link href={"/"}>Home</Link>
+          <Link href={"/login"}>Login</Link>
+          <Link href={"/register"}>Register</Link>
+          <HeaderProfile />
 
           <ThemeToggleButton />
         </nav>

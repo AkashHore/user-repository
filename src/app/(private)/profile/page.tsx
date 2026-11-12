@@ -1,3 +1,4 @@
+import LogOutButton from "@/components/LogOutButton";
 import {
   Avatar,
   AvatarFallback,
@@ -5,7 +6,7 @@ import {
 } from "@/components/shadcnui/avatar";
 import { buttonVariants } from "@/components/shadcnui/button";
 import { auth } from "@/lib/auth";
-import { PenBox, Power } from "lucide-react";
+import { PenBox } from "lucide-react";
 import { Metadata } from "next";
 import { headers } from "next/headers";
 import Link from "next/link";
@@ -50,11 +51,7 @@ const page = async () => {
           className={buttonVariants({ variant: "outline", size: "lg" })}>
           <PenBox /> Update Profile
         </Link>
-        <Link
-          href={"/"}
-          className={buttonVariants({ variant: "destructive", size: "lg" })}>
-          <Power /> Logout
-        </Link>
+        <LogOutButton />
       </div>
     </section>
   );
