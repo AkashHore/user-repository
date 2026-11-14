@@ -58,7 +58,6 @@ const UpdateAvatar = ({ imgUrl }: UpdateAvatarProps) => {
 
   return (
     <>
-      {" "}
       <CardContent className="grid place-items-center">
         {!isFile && (
           <button

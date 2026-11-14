@@ -25,15 +25,11 @@ const HeaderProfile = async () => {
 
   const nameParts = name.trim().split(/\s+/);
 
-  // const firstName = nameParts[0].charAt(0).toUpperCase();
-
-  // const lastName = nameParts[1] ? nameParts[1].charAt(0).toUpperCase() : "";
-
   const nameFallback = `${nameParts[0].charAt(0).toUpperCase()} ${nameParts[1] ? nameParts[1].charAt(0).toUpperCase() : ""}`;
 
   return (
     <Link href={"/profile"}>
-      <Avatar className="size-14">
+      <Avatar className="size-10">
         {image && <AvatarImage src={`/${image}`} />}
         <AvatarFallback className="">{nameFallback}</AvatarFallback>
       </Avatar>
