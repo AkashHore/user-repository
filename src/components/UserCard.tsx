@@ -31,7 +31,10 @@ const UserCard = ({ ucData, currentUserId }: UserCardProps) => {
             <Link
               className="flex items-center justify-center gap-2"
               href="/profile">
-              {name} <Badge>Online</Badge>
+              {name}{" "}
+              <Badge className="bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300">
+                Online
+              </Badge>
             </Link>
           : <span>{name}</span>}
         </CardTitle>
