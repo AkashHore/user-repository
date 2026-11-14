@@ -2,6 +2,7 @@
 
 import { authClient } from "@/lib/auth-client";
 import { loginSchema, LoginType } from "@/lib/zodSchema";
+import { revalidatePage } from "@/server/revalidatePage";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoaderIcon, LogInIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -47,6 +48,8 @@ const LoginForm = () => {
       });
 
       reset();
+
+      await revalidatePage();
 
       replace("/");
     }

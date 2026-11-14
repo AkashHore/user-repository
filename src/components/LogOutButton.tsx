@@ -1,6 +1,7 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
+import { revalidatePage } from "@/server/revalidatePage";
 import { LogOutIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -25,6 +26,8 @@ const LogOutButton = () => {
         title: "LogOut successfully",
       });
 
+      await revalidatePage();
+
       replace("/");
     }
 
@@ -34,7 +37,7 @@ const LogOutButton = () => {
   return (
     <Button
       type="button"
-      size={"lg"}
+      className={"size-9 w-fit"}
       variant={"destructive"}
       disabled={loading}
       onClick={logoutbtn}>

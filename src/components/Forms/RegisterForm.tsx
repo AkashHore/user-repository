@@ -2,6 +2,7 @@
 
 import { authClient } from "@/lib/auth-client";
 import { registerSchema, RegisterType } from "@/lib/zodSchema";
+import { revalidatePage } from "@/server/revalidatePage";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoaderIcon, PenIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -51,6 +52,8 @@ const RegisterForm = () => {
       });
 
       reset();
+
+      await revalidatePage();
 
       replace("/login");
     }

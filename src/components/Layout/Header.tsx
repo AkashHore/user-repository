@@ -1,6 +1,5 @@
 import Link from "next/link";
 import HeaderProfile from "../HeaderProfile";
-import ThemeToggleButton from "./ThemeToggleButton";
 
 const Header = () => {
   return (
@@ -17,12 +16,7 @@ const Header = () => {
         </Link>
 
         <nav className="flex items-center gap-4">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/login"}>Login</Link>
-          <Link href={"/register"}>Register</Link>
           <HeaderProfile />
-
-          <ThemeToggleButton />
         </nav>
       </div>
     </header>

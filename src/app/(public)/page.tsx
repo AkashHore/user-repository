@@ -15,6 +15,8 @@ const page = async () => {
     headers: await headers(),
   });
 
+  const currentUserId = session === null ? null : session.user.id;
+
   const allusers = await prisma.user.findMany();
 
   if (allusers.length === 0) {
@@ -33,7 +35,7 @@ const page = async () => {
         <UserCard
           key={item.id}
           ucData={item}
-          currentUserId={session?.user?.id}
+          currentUserId={currentUserId}
         />
       ))}
     </section>
